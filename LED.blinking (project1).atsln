@@ -1,22 +1,22 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Atmel Studio Solution File, Format Version 11.00
-VisualStudioVersion = 14.0.23107.0
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "LED.blinking (project1)", "LED.blinking (project1)\LED.blinking (project1).cproj", "{DCE6C7E3-EE26-4D79-826B-08594B9AD897}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|AVR = Debug|AVR
-		Release|AVR = Release|AVR
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.ActiveCfg = Debug|AVR
-		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.Build.0 = Debug|AVR
-		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|AVR.ActiveCfg = Release|AVR
-		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|AVR.Build.0 = Release|AVR
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-EndGlobal
+/*
+ * LED.blinking (project1).c
+ *
+ * Created: 06-09-2021 13:37:52
+ * Author : neerav
+ */ 
+#define F_CPU 1000000UL
+#include <avr/io.h>
+#include<util/delay.h>
+
+int main(void)
+{
+    DDRA=0x01;
+    while (1) 
+    {
+		PORTA=0x01; //LED ON
+		_delay_ms(1000);
+		PORTA=0x00;// LED OFF
+		_delay_ms(1000);
+				
+   }
+}
